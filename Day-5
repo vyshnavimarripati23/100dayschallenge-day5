@@ -1,0 +1,45 @@
+# 1. Take a list or array, insert new element x at the given index y.  Python students should not use any predefined methods like insert or append.
+list1=[10,20,30,40,50]
+x=int(input("enter the element to add:"))
+y=int(input("enter the index position:"))
+# list1.insert(y,x)
+first_list=list1[:y]
+second_list=list1[y:]
+list1=first_list+[x]+second_list
+print(list1)
+
+# 2. Delete an element from given index i from array or list. Python students should not use any method.
+
+pos=int(input("enter the index to delete the element:"))
+first_list=list1[:pos]
+second_list=list1[pos+1:]
+list1=first_list+second_list
+print(list1)
+
+
+
+# 3. Take an array or list of 10 numbers. Perform right rotation of the elements n number of times.
+
+l1 = [10,20,30,40,50,60,70,80,90,100]
+n1 = int(input("Enter the number of times to rotate: "))
+
+for i in range(n1):
+    temp = l1[0]
+    l1 = l1[1:]
+    l1 = l1 + [temp]
+
+print(l1)
+
+
+
+
+# 4. Take an array or list of 10 numbers. Perform left rotation of the elements n number of times.
+l1 = [10,20,30,40,50,60,70,80,90,100]
+n1 = int(input("Enter the number of times to rotate: "))
+
+for i in range(n1):
+    temp = l1[len(l1)-1]
+    l1 = l1[:len(l1)-1]
+    l1 = [temp]+l1
+
+print("After rotation:", l1)
